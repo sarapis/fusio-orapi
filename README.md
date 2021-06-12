@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="http://api.dc.openreferral.org/socialServicesApp/search.php" target="_blank"><img src="https://pruvn.co/wp-content/uploads/2020/07/Pruvn-logo2-01-2048x2048.png"></a>
+    <a href="http://api.dc.openreferral.org/socialServicesApp/search.php" target="_blank"><img src="https://pruvn.co/wp-content/uploads/2020/07/Pruvn-logo2-01-2048x2048.png" width="200px" height="200px"></a>
 </p>
 
 # DC
@@ -18,16 +18,21 @@
 ## Installation
 
 **Download repository**
+
 Arrange Apache virtual host - level 1 domain or subdomain
 
 `cd /script_folder`
 
 `git clone https://github.com/sarapis/fusio-orapi .`
 
+
 **Update software components**
+
 `composer update`
 
+
 **Set environment values**
+
 `php bin/orapi env`
 
 `mysql -u root -p < orapi_fusio.sql`
@@ -40,20 +45,25 @@ Arrange Apache virtual host - level 1 domain or subdomain
 
 API is available for reading data from several entry points described by Human Service Data API Suite (HSDA) - https://openreferral.readthedocs.io/en/latest/hsda/
 
-Base API entry point is /
+Base API entry point 
+
+`/`
 
 Authentication is not required
 
 
 
-API docs available at /developer
+API docs available at 
+
+`/developer`
 
 
 ## API back-end
 
-/console
+`/console`
 
 **Create Fusio engine user**
+
 `php bin/fusio adduser`
 
 
