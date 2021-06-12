@@ -1,0 +1,55 @@
+#message
+Message: !include resources/schema/message.json
+
+
+#top level
+Contact-Complete: !include resources/schema/contact_complete.json
+Contacts: !include resources/schema/contacts.json
+Contacts-Complete: !include resources/schema/contacts_complete.json
+
+Services: !include resources/schema/services.json
+Service-Complete: !include resources/schema/service_complete.json
+Services-Complete: !include resources/schema/services_complete.json
+
+Locations: !include resources/schema/locations.json
+Location-Complete: !include resources/schema/location_complete.json
+Locations-Complete: !include resources/schema/locations_complete.json
+
+Organization: !include resources/schema/organization.json
+Organizations: !include resources/schema/organizations.json
+Organization-Complete: !include resources/schema/organization_complete.json
+Organizations-Complete: !include resources/schema/organizations_complete.json
+
+#second level
+Contacts-Shortlist: !include resources/schema/contacts/contacts_shortlist.json
+Contact: !include resources/schema/contacts/contact.json
+
+Locations-Shortlist: !include resources/schema/locations/locations_shortlist.json
+Location: !include resources/schema/locations/location.json
+
+Phones-Shortlist: !include resources/schema/phones/phones_shortlist.json
+Phone: !include resources/schema/phones/phone.json
+
+Accessibility-Shortlist: !include resources/schema/accessibility/accessibility_shortlist.json
+Accessibility-Item: !include resources/schema/accessibility/accessibility_item.json
+
+Languages-Shortlist: !include resources/schema/languages/languages_shortlist.json
+Language: !include resources/schema/languages/language.json
+
+Physical-Addresses-Shortlist: !include resources/schema/physical_addresses/physical_addresses_shortlist.json
+Physical-Address: !include resources/schema/physical_addresses/physical_address.json
+
+Regular-Schedules-Shortlist: !include resources/schema/regular_schedules/regular_schedules_shortlist.json
+Regular-Schedule: !include resources/schema/regular_schedules/regular_schedule.json
+
+Services-Shortlist: !include resources/schema/services/services_shortlist.json
+Service: !include resources/schema/services/service.json
+
+Taxonomy-Shortlist: !include resources/schema/taxonomy/taxonomy_shortlist.json
+Taxonomy-Item: !include resources/schema/taxonomy/taxonomy_item.json
+
+Details-Shortlist: !include resources/schema/details/details_shortlist.json
+Detail: !include resources/schema/details/detail.json
+
+Service-Area-Shortlist: !include resources/schema/service_area/service_area_shortlist.json
+Service-Area: !include resources/schema/service_area/service_area.json

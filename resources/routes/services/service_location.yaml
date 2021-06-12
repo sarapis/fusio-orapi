@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get location entry for service"
+    description: "Returns location entry for a specific service"
+    responses:
+      200: Location
+      500: Message
+    action: "${dir.src}/actions/services/get_service_location.php"

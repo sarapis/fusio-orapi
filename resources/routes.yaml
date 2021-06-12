@@ -1,0 +1,67 @@
+"/": !include resources/routes/root.yaml
+
+"/contacts": !include resources/routes/contacts/contacts.yaml
+"/contacts/complete": !include resources/routes/contacts/contacts_complete.yaml
+"/contacts/complete/:id": !include resources/routes/contacts/contact_complete.yaml
+"/contacts/:id": !include resources/routes/contacts/contact.yaml
+"/contacts/:id/phones": !include resources/routes/contacts/contact_phones.yaml
+"/contacts/:id/phones/:item_id": !include resources/routes/contacts/contact_phone.yaml
+
+"/locations": !include resources/routes/locations/locations.yaml
+"/locations/complete": !include resources/routes/locations/locations_complete.yaml
+"/locations/complete/:id": !include resources/routes/locations/location_complete.yaml
+"/locations/:id": !include resources/routes/locations/location.yaml
+"/locations/:id/languages": !include resources/routes/locations/location_languages.yaml
+"/locations/:id/languages/:item_id": !include resources/routes/locations/location_language.yaml
+"/locations/:id/physical-address": !include resources/routes/locations/location_physical_addresses.yaml
+"/locations/:id/physical-address/:item_id": !include resources/routes/locations/location_physical_address.yaml
+"/locations/:id/phones": !include resources/routes/locations/location_phones.yaml
+"/locations/:id/phones/:item_id": !include resources/routes/locations/location_phone.yaml
+"/locations/:id/regular-schedule": !include resources/routes/locations/location_regular_schedules.yaml
+"/locations/:id/regular-schedule/:item_id": !include resources/routes/locations/location_regular_schedule.yaml
+"/locations/:id/services": !include resources/routes/locations/location_services.yaml
+"/locations/:id/services/:item_id": !include resources/routes/locations/location_service.yaml
+"/locations/:id/accessibility": !include resources/routes/locations/location_accessibility.yaml
+"/locations/:id/accessibility/:item_id": !include resources/routes/locations/location_accessibility_item.yaml
+
+"/organizations": !include resources/routes/organizations/organizations.yaml
+"/organizations/complete": !include resources/routes/organizations/organizations_complete.yaml
+"/organizations/complete/:id": !include resources/routes/organizations/organization_complete.yaml
+"/organizations/:id": !include resources/routes/organizations/organization.yaml
+"/organizations/:id/contacts": !include resources/routes/organizations/organization_contacts.yaml
+"/organizations/:id/contacts/:item_id": !include resources/routes/organizations/organization_contact.yaml
+"/organizations/:id/locations": !include resources/routes/organizations/organization_locations.yaml
+"/organizations/:id/locations/:item_id": !include resources/routes/organizations/organization_location.yaml
+"/organizations/:id/phones": !include resources/routes/organizations/organization_phones.yaml
+"/organizations/:id/phones/:item_id": !include resources/routes/organizations/organization_phone.yaml
+"/organizations/:id/services": !include resources/routes/organizations/organization_services.yaml
+"/organizations/:id/services/:item_id": !include resources/routes/organizations/organization_service.yaml
+
+"/services": !include resources/routes/services/services.yaml
+"/services/complete": !include resources/routes/services/services_complete.yaml
+"/services/:id/contacts": !include resources/routes/services/service_contacts.yaml
+"/services/:id/contacts/:item_id": !include resources/routes/services/service_contact.yaml
+"/services/:id/languages": !include resources/routes/services/service_languages.yaml
+"/services/:id/languages/:item_id": !include resources/routes/services/service_language.yaml
+"/services/:id/phones": !include resources/routes/services/service_phones.yaml
+"/services/:id/phones/:item_id": !include resources/routes/services/service_phone.yaml
+"/services/:id/regular-schedule": !include resources/routes/services/service_regular_schedules.yaml
+"/services/:id/regular-schedule/:item_id": !include resources/routes/services/service_regular_schedule.yaml
+"/services/:id/service-area": !include resources/routes/services/service_service_areas.yaml
+"/services/:id/service-area/:item_id": !include resources/routes/services/service_service_area.yaml
+"/services/:id/taxonomy": !include resources/routes/services/service_taxonomy.yaml
+"/services/:id/taxonomy/:item_id": !include resources/routes/services/service_taxonomy_item.yaml
+"/services/:id/details": !include resources/routes/services/service_details.yaml
+"/services/:id/details/:item_id": !include resources/routes/services/service_detail.yaml
+"/services/:id/organization": !include resources/routes/services/service_organization.yaml
+"/services/:id/location": !include resources/routes/services/service_location.yaml
+"/services/complete/*id": !include resources/routes/services/service_complete.yaml
+"/services/*id": !include resources/routes/services/service.yaml
+
+
+"/search": !include resources/routes/search.yaml
+
+"/taxonomy": !include resources/routes/taxonomy/taxonomy.yaml
+"/taxonomys/:id": !include resources/routes/taxonomy/taxonomy_item.yaml
+
+"/autocomplete/:section": !include resources/routes/srv/autocomplete.yaml

@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "Contact",
+  "properties": {
+	"id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "service_at_location_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

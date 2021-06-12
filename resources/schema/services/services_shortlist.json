@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "Services List",
+  "properties": {
+    "total_items": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///service.json"
+      }
+    }
+  }
+}

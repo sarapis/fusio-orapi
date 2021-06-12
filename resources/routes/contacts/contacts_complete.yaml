@@ -1,0 +1,11 @@
+version: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get all contacts with full details"
+    description: "Returns a list of contacts with full details and filtering support"
+    responses:
+      200: Contacts-Complete
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contacts_complete.php"

@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "title": "Physical Address",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "attention": {
+      "type": "string"
+    },
+    "address_1": {
+      "type": "string"
+    },
+    "address_2": {
+      "type": "string"
+    },
+    "address_3": {
+      "type": "string"
+    },
+    "address_4": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "state_province": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

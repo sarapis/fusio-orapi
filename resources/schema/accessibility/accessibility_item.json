@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "Accessibility Item",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "accessibility": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

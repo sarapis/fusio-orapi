@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get contact for organization"
+    description: "Returns a contact entry for a specific organization"
+    responses:
+      200: Contact
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organization_contact.php"

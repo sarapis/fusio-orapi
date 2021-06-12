@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get all service areas"
+    description: "Returns a list of all service areas"
+    responses:
+      200: Service-Area-Shortlist
+      500: Message
+    action: "${dir.src}/actions/services/get_service_service_areas.php"

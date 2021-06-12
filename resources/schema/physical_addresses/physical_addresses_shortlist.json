@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "List of Physical Addresses",
+  "properties": {
+    "total_items": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///physical_address.json"
+      }
+    }
+  }
+}

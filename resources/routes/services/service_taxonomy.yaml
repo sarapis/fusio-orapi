@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get taxonomy for service"
+    description: "Returns a list of taxonomy items set for a specific service"
+    responses:
+      200: Taxonomy-Shortlist
+      500: Message
+    action: "${dir.src}/actions/services/get_service_taxonomy.php"

@@ -1,0 +1,10 @@
+version: 1
+scopes: ["taxonomy"]
+methods:
+  GET:
+    public: true
+    summary: "Get Taxonomy"
+    description: "Get Taxonomy"
+    responses:
+      200: Taxonomy-Shortlist
+    action: "${dir.src}/actions/taxonomy/get_taxonomy.php"

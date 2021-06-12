@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "title": "Detailed Service",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternate_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "interpretation_services": {
+      "type": "string"
+    },
+    "application_process": {
+      "type": "string"
+    },
+    "wait_time": {
+      "type": "string"
+    },
+    "fees": {
+      "type": "string"
+    },
+    "accreditations": {
+      "type": "string"
+    },
+    "licenses": {
+      "type": "string"
+    },
+    "contacts": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///contacts/contact.json"
+      }
+	},
+    "regular_schedule": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///regular_schedules/regular_schedule.json"
+      }
+	},
+    "languages": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///languages/language.json"
+      }
+	},
+    "phones": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///phones/phone.json"
+      }
+	},
+    "service_area": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///service_area/service_area.json"
+      }
+	},
+    "taxonomy": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///taxonomy/taxonomy_item.json"
+      }
+	},
+    "details": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///details/detail.json"
+      }
+	},
+    "organization": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///organization.json"
+      }
+	},
+    "location": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///locations/location.json"
+      }
+	}
+  },
+  "required": ["id"]
+}

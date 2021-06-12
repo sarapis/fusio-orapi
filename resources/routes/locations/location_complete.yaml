@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get location with full details"
+    description: "Returns a location entry with full details"
+    responses:
+      200: Location-Complete
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_complete.php"

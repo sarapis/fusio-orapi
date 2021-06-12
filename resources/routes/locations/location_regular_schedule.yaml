@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get regular schedule for location"
+    description: "Returns a regular schedule entry for a specific location"
+    responses:
+      200: Regular-Schedule
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_regular_schedule.php"

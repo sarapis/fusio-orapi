@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get physical address for location"
+    description: "Returns a physical address entry for a specific location"
+    responses:
+      200: Physical-Address
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_physical_address.php"

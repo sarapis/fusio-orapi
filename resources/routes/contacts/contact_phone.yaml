@@ -1,0 +1,11 @@
+version: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get phone for contact"
+    description: "Returns the specific phone entity associated with a specific contact"
+    responses:
+      200: Phone
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contact_phone.php"

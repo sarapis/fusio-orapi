@@ -1,0 +1,11 @@
+version: 1
+scopes: ["taxonomy"]
+methods:
+  GET:
+    public: true
+    summary: "Get Taxonomy Item"
+    description: "Get taxonomy item"
+    responses:
+      200: Taxonomy-Item
+      500: Message
+    action: "${dir.src}/actions/taxonomy/get_taxonomy_item.php"

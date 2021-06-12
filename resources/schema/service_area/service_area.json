@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "Service Area",
+  "properties": {
+	"id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "service_area": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

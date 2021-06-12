@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get details for service"
+    description: "Returns a list of details attached to specific service"
+    responses:
+      200: Details-Shortlist
+      500: Message
+    action: "${dir.src}/actions/services/get_service_details.php"

@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "title": "Location Complete",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternate_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "transportation": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "regular_schedule": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///regular_schedules/regular_schedule.json"
+      }
+	},
+    "languages": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///languages/language.json"
+      }
+	},
+    "physical_address": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///physical_addresses/physical_address.json"
+      }
+	},
+    "phones": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///phones/phone.json"
+      }
+	},
+    "service": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///services/service.json"
+      }
+	},
+    "accessibility_for_disabilities": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///accessibility/accessibility_item.json"
+      }
+	}
+  },
+  "required": ["id"]
+}

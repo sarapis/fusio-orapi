@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get all regular schedules for a location"
+    description: "Returns a list of regular schedules for a specific location"
+    responses:
+      200: Regular-Schedules-Shortlist
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_regular_schedules.php"

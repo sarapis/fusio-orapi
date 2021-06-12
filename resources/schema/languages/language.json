@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "Language",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

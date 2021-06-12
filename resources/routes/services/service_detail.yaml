@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get detail for service"
+    description: "Returns detail entry for specific service"
+    responses:
+      200: Detail
+      500: Message
+    action: "${dir.src}/actions/services/get_service_detail.php"

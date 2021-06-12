@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "title": "Regular Schedule for single day",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "service_at_location_id": {
+      "type": "string"
+    },
+    "weekday": {
+      "type": "string"
+    },
+    "opens_at": {
+      "type": "string"
+    },
+    "closes_at": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "weekday"]
+}

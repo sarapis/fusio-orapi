@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get taxonomy entry for service"
+    description: "Returns a taxonomy entry for a specific service"
+    responses:
+      200: Taxonomy-Item
+      500: Message
+    action: "${dir.src}/actions/services/get_service_taxonomy_item.php"

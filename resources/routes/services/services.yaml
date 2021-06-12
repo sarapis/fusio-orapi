@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get all services"
+    description: "Returns a full list of services with filtering support"
+    responses:
+      200: Services
+      500: Message
+    action: "${dir.src}/actions/services/get_services.php"

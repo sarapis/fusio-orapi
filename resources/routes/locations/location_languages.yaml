@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get all languages for a location"
+    description: "Returns a list of all languages supported by a location"
+    responses:
+      200: Languages-Shortlist
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_languages.php"

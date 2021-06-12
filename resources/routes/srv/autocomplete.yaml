@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations", "locations", "services"]
+methods:
+  GET:
+    public: true
+    summary: "Microservices"
+    description: "Values prefetch list for autocomplete module serving Services, Organizations, Taxonomy requests"
+    responses:
+      200: Passthru
+      500: Message
+    action: "${dir.src}/actions/srv/autocomplete.php"

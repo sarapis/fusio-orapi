@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "title": "Organization Complete",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternate_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "tax_status": {
+      "type": "string"
+    },
+    "tax_id": {
+      "type": "string"
+    },
+    "year_incorporated": {
+      "type": "string"
+    },
+    "legal_status": {
+      "type": "string"
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///contacts/contact.json"
+      }
+	},
+    "locations": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///locations/location.json"
+      }
+	},
+    "services": {	
+      "type": "array",
+      "items": {
+        "$ref": "file:///services/service.json"
+      }
+	}
+  },
+  "required": ["id"]
+}

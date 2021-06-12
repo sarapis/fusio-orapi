@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "Phones List",
+  "properties": {
+    "total_items": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///phone.json"
+      }
+    }
+  }
+}

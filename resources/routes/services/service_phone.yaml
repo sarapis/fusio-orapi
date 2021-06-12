@@ -1,0 +1,11 @@
+version: 1
+scopes: ["services"]
+methods:
+  GET:
+    public: true
+    summary: "Get phone for location"
+    description: "Returns a phone entry for a specific location"
+    responses:
+      200: Phone
+      500: Message
+    action: "${dir.src}/actions/services/get_service_phone.php"

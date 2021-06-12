@@ -1,0 +1,11 @@
+version: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get contact"
+    description: "Returns a contact entry by its Id"
+    responses:
+      200: Contact
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contact.php"

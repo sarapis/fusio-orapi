@@ -1,0 +1,11 @@
+version: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get phone for contact"
+    description: "Returns a list of phones associated with a specific contact"
+    responses:
+      200: Phones-Shortlist
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contact_phones.php"

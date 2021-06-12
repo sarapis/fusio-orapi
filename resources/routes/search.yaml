@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations", "locations", "services"]
+methods:
+  GET:
+    public: true
+    summary: "Search over organizations, locations, services"
+    description: "Returns a full list of organizations, locations, services with filtering support"
+    responses:
+      200: Passthru
+      500: Message
+    action: "${dir.src}/actions/get_search_results.php"

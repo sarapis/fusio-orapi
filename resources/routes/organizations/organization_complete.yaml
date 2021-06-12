@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get organization with full details"
+    description: "Returns an organization entry with full details by Id"
+    responses:
+      200: Organization-Complete
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organization_complete.php"

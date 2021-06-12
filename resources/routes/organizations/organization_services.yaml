@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get all services for organization"
+    description: "Returns a full list of services for a specific organization"
+    responses:
+      200: Services-Shortlist
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organization_services.php"

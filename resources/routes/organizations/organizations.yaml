@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get list of organizations"
+    description: "Returns a list of all organizations with filtering support"
+    responses:
+      200: Organizations
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organizations.php"

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "Full Regular Schedule",
+  "properties": {
+    "total_items": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///regular_schedule.json"
+      }
+    }
+  }
+}

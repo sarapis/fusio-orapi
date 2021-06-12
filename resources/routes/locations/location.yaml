@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get location"
+    description: "Returns a location entry by Id"
+    responses:
+      200: Location
+      500: Message
+    action: "${dir.src}/actions/locations/get_location.php"

@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get all services for location"
+    description: "Returns a list of all services for a location"
+    responses:
+      200: Services-Shortlist
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_services.php"

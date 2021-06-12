@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get list of accessibility for disabilities for location"
+    description: "Returns a list of all accessibility for disabilities for a specific location"
+    responses:
+      200: Accessibility-Shortlist
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_accessibility.php"

@@ -1,0 +1,11 @@
+version: 1
+scopes: ["locations"]
+methods:
+  GET:
+    public: true
+    summary: "Get language for location"
+    description: "Returns a specific language entry for a specific location by Id"
+    responses:
+      200: Language
+      500: Message
+    action: "${dir.src}/actions/locations/get_location_language.php"

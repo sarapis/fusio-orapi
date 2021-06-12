@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "title": "placeholder",
+  "properties": {
+    "field": {
+      "type": "string"
+    }
+  }
+}

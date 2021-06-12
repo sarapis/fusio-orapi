@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "title": "Contacts",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "per_page": {
+      "type": "integer"
+    },
+    "total_pages": {
+      "type": "integer"
+    },
+    "total_items": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///contacts/contact.json"
+      }
+    }
+  }
+}

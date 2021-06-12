@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get list of organizations with full details"
+    description: "Returns a list of organizations with full schema and filtering support"
+    responses:
+      200: Organizations-Complete
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organizations_complete.php"

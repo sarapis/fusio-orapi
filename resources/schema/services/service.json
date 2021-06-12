@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "title": "Service",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternate_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "interpretation_services": {
+      "type": "string"
+    },
+    "application_process": {
+      "type": "string"
+    },
+    "wait_time": {
+      "type": "string"
+    },
+    "fees": {
+      "type": "string"
+    },
+    "accreditations": {
+      "type": "string"
+    },
+    "licenses": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

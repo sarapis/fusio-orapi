@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get organization"
+    description: "Returns a specific organization entry by Id"
+    responses:
+      200: Organization
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organization.php"

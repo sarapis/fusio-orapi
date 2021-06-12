@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "title": "Phone",
+  "properties": {
+    	"id": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "contact_id": {
+      "type": "string"
+    },
+    "service_at_location_id": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "extension": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "number"]
+}

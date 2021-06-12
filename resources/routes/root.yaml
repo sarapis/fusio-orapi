@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations", "locations", "services"]
+methods:
+  GET:
+    public: true
+    summary: "Start page request - API documentation"
+    description: ""
+    responses:
+      200: Passthru
+      500: Message
+    action: "${dir.src}/actions/root_redirect.php"

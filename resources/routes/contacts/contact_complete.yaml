@@ -1,0 +1,11 @@
+version: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get contact with full details"
+    description: "Returns a contact entry with full details"
+    responses:
+      200: Contact-Complete
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contact_complete.php"

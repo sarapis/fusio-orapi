@@ -1,0 +1,11 @@
+version: 1
+scopes: ["organizations"]
+methods:
+  GET:
+    public: true
+    summary: "Get all contacts for organization"
+    description: "Returns a full list of contacts for a specific organization"
+    responses:
+      200: Contacts-Shortlist
+      500: Message
+    action: "${dir.src}/actions/organizations/get_organization_contacts.php"

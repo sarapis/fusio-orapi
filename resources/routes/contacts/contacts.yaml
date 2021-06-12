@@ -1,0 +1,12 @@
+version: 1
+status: 1
+scopes: ["contacts"]
+methods:
+  GET:
+    public: true
+    summary: "Get all contacts"
+    description: "Returns a list of all registered contacts with filtering support"
+    responses:
+      200: Contacts
+      500: Message
+    action: "${dir.src}/actions/contacts/get_contacts.php"
