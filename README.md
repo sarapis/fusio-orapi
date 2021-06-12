@@ -23,10 +23,10 @@ Arrange Apache virtual host - level 1 domain or subdomain
 
 `cd /script_folder`
 
-`git clone https://github.com/sarapis/fusio-orapi .`
+`git clone https://github.com/pruvn/orapi .`
 
 
-**Update software components**
+**Update dependencies**
 
 `composer update`
 
