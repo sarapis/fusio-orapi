@@ -19,7 +19,7 @@
 
 **Download repository**
 
-Arrange Apache virtual host - level 1 domain or subdomain
+Arrange apache virtual host - level 1 domain or subdomain
 
 `cd /script_folder`
 
@@ -35,10 +35,17 @@ Arrange Apache virtual host - level 1 domain or subdomain
 
 `php bin/orapi env`
 
+Mysql should be launched as user with databases and users creation rights
+
 `mysql -u root -p < orapi_fusio.sql`
 
 `php bin/fusio deploy`
 
+**Test API**
+
+Open following entry point in browser - you will see 1st page with 50 of 1075 services descriptions
+
+`/services`
 
 
 ## API

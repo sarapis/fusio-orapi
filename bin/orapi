@@ -40,8 +40,8 @@ switch ($argv[1])
 		$fn = $dir . '/orapi_fusio.sql';
 		$t = file_get_contents($fn);
 		$t = preg_replace("~CREATE USER 'orapiUser2021'@'localhost' IDENTIFIED BY '';~si", "CREATE USER '{$u}'@'localhost' IDENTIFIED BY '{$p}';", $t);
-		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_fusio.* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_fusio.* TO '{$u}'@'localhost';", $t);
-		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_data.* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_data.* TO '{$u}'@'localhost';", $t);
+		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_fusio\.\* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_fusio.* TO '{$u}'@'localhost';", $t);
+		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_data\.\* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_data.* TO '{$u}'@'localhost';", $t);
 		file_put_contents($fn, $t);
 		
 }
