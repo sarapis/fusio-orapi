@@ -26,22 +26,22 @@ switch ($argv[1])
 		
 		$fn = $dir . '/.env';
 		$t = file_get_contents($fn);
-		$t = preg_replace('~FUSIO_DB_USER=""~si', "FUSIO_DB_USER=\"{$u}\"", $t);
-		$t = preg_replace('~FUSIO_DB_PW=""~si', "FUSIO_DB_PW=\"{$p}\"", $t);
-		$t = preg_replace('~FUSIO_HOST="127.0.0.1"~si', "FUSIO_HOST=\"{$url}\"", $t);
+		$t = preg_replace('~FUSIO_DB_USER="[^"]*"~si', "FUSIO_DB_USER=\"{$u}\"", $t);
+		$t = preg_replace('~FUSIO_DB_PW="[^"]*"~si', "FUSIO_DB_PW=\"{$p}\"", $t);
+		$t = preg_replace('~FUSIO_HOST="[^"]*"~si', "FUSIO_HOST=\"{$url}\"", $t);
 		file_put_contents($fn, $t);
 		
 		$fn = $dir . '/resources/connections.yaml';
 		$t = file_get_contents($fn);
-		$t = preg_replace('~username: ""~si', "username: \"{$u}\"", $t);
-		$t = preg_replace('~password: ""~si', "password: \"{$p}\"", $t);
+		$t = preg_replace('~username: "[^"]*"~si', "username: \"{$u}\"", $t);
+		$t = preg_replace('~password: "[^"]*"~si', "password: \"{$p}\"", $t);
 		file_put_contents($fn, $t);
 		
 		$fn = $dir . '/orapi_fusio.sql';
 		$t = file_get_contents($fn);
-		$t = preg_replace("~CREATE USER 'orapiUser2021'@'localhost' IDENTIFIED BY '';~si", "CREATE USER '{$u}'@'localhost' IDENTIFIED BY '{$p}';", $t);
-		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_fusio\.\* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_fusio.* TO '{$u}'@'localhost';", $t);
-		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_data\.\* TO 'orapiUser2021'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_data.* TO '{$u}'@'localhost';", $t);
+		$t = preg_replace("~CREATE USER '[^']*'@'localhost' IDENTIFIED BY '[^']*';~si", "CREATE USER '{$u}'@'localhost' IDENTIFIED BY '{$p}';", $t);
+		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_fusio\.\* TO '[^']*'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_fusio.* TO '{$u}'@'localhost';", $t);
+		$t = preg_replace("~GRANT ALL PRIVILEGES ON orapi_data\.\* TO '[^']*'@'localhost';~si", "GRANT ALL PRIVILEGES ON orapi_data.* TO '{$u}'@'localhost';", $t);
 		file_put_contents($fn, $t);
 		
 }

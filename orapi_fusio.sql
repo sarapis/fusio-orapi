@@ -7,6 +7,8 @@ SET time_zone = "+00:00";
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40101 SET NAMES utf8 */;
 
+DROP DATABASE IF EXISTS orapi_fusio;
+
 CREATE DATABASE IF NOT EXISTS orapi_fusio DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE orapi_fusio;
 
@@ -1033,7 +1035,7 @@ ALTER TABLE fusio_user_scope
 
 
 
-
+DROP DATABASE IF EXISTS orapi_data;
 
 CREATE DATABASE IF NOT EXISTS orapi_data DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE orapi_data;
