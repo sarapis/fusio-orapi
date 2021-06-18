@@ -6,7 +6,7 @@
 
 ## Environment
 
-**LAMP stack**
+**LAMP stack (Reccommended: Ubuntu 20, PHP 7.4, MySQL 5.7)**
 *	php >=7.3
 *	MySQL >=5.7 or MariaDB >=10.0
 *	Apache >=2.2
@@ -14,8 +14,39 @@
 *	git
 *	composer
 
-
 ## Installation
+
+**Install LAMP**
+On a afresh Ubuntu 20.0 installation:
+- Install Apache
+`sudo apt-get install apache2`
+
+Ensure port 80 and 443 (If you using a domain with SSL) are open. If using AWS, configure this in security group. Alternatively, you can run:
+`sudo ufw allow in "Apache Full"`
+
+- Install MySQL
+`sudo apt-get install mysql-server`
+
+- Install PHP (7.4 in this case. 7.3 will work just fine)
+`sudo apt -y install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt -y install php7.4`
+
+- Install PHP modules
+`sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common,json,curl,cli,xml,soap,opcache,readline,fpm,dev}`
+
+- Install Composer
+`php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');" `
+
+- Enable Apache mod_rewrite
+`sudo a2enmod rewrite
+sudo systemctl restart apache2`
+
+
 
 **Download repository**
 
