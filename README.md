@@ -15,9 +15,9 @@
 *	composer
 
 ## Installation
+This guide provides two installation option: a VM (with Ubuntu 20.04 or any other Linux Distro) and Azure App Service
 
-**Install LAMP**
-On a afresh Ubuntu 20.0 installation:
+** Deploy to Ubuntu 20.04 VM**
 - Install Apache
 ```bash
     sudo apt-get install apache2
@@ -93,6 +93,10 @@ Mysql should be launched as user with databases and users creation rights
 ```bash
     mysql -u root -p < orapi_fusio.sql
 ```
+Note: 
+1. Make sure all the data in `orapi_fusion.sql` file is imported into the database. It should create two databases: `orapi_fusio` and `orapi_data` 
+2. If you are using a remote database make sure to update the values in `resources/connections.yaml` file to reflect your database host and credentials.
+3. If your database password contains `$` , you may get a connection error. To sort out this, enclose your database password within single quotation marks instead of double quotation marks in `.env` file
 
 ```bash
     php bin/fusio deploy
