@@ -1,6 +1,3 @@
-<p align="center">
-    <a href="http://api.dc.openreferral.org/" target="_blank"><img src="https://sarapis.org/wp-content/uploads/2019/05/sarapis-01-2.png" width="300px"></a>
-</p>
 
 # DC
 
