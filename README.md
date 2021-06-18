@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="http://api.dc.openreferral.org/socialServicesApp/search.php" target="_blank"><img src="https://pruvn.co/wp-content/uploads/2020/07/Pruvn-logo2-01-2048x2048.png" width="200px" height="200px"></a>
+    <a href="http://api.dc.openreferral.org/" target="_blank"><img src="https://sarapis.org/wp-content/uploads/2019/05/sarapis-01-2.png" width="300px"></a>
 </p>
 
 # DC
