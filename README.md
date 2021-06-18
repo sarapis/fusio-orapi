@@ -74,6 +74,21 @@ Arrange apache virtual host - level 1 domain or subdomain
     git clone https://github.com/pruvn/orapi .
 ```
 
+If the API is the only application running on the VM, you can move the files to server root:
+```bash
+    sudo chmod 777 -R /var/www/html
+    sudo chmod 777 -R /var/www/html/.*
+    sudo chown www-data:www-data /var/www/html/ -R
+```
+
+And then update Apache config (Assuming your vhost is `\etc\apache2\sites-available\000-default.conf`)
+```bash
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+```
 
 **Update dependencies**
 
