@@ -14,6 +14,7 @@
 *	git
 *	composer
 
+
 ## Installation
 This guide provides two installation option: a VM (with Ubuntu 20.04 or any other Linux Distro) and Azure App Service
 
