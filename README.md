@@ -168,7 +168,7 @@ Navidate to `site`
 
 
 ```bash
-    git clone https://github.com/pruvn/orapi .
+    git clone https://github.com/sarapis/fusio-orapi .
 ```
 
 Move contents of the api to `wwwroot`
