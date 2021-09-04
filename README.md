@@ -69,7 +69,7 @@ Arrange apache virtual host - level 1 domain or subdomain
 ```
 
 ```bash
-    git clone https://github.com/pruvn/orapi .
+    git clone https://github.com/sarapis/fusio-orapi .
 ```
 
 If the API is the only application running on the VM, you can move the files to server root:
