@@ -15,7 +15,7 @@
 ## Installation
 This guide provides two installation option: a VM (with Ubuntu 20.04 or any other Linux Distro) and Azure App Service
 
-1. Deploy to Ubuntu 20.04 VM (Virtual Machine)
+## 1. Deploy to Ubuntu 20.04 VM (Virtual Machine)
 - Install Apache
 ```bash
     sudo apt-get install apache2
@@ -69,7 +69,7 @@ Arrange apache virtual host - level 1 domain or subdomain
 ```
 
 ```bash
-    git clone https://github.com/pruvn/orapi .
+    git clone https://github.com/sarapis/fusio-orapi .
 ```
 
 If the API is the only application running on the VM, you can move the files to server root:
@@ -123,7 +123,7 @@ Open following entry point in browser - you will see 1st page with 50 of 1075 se
     /services
 ```
 
-2. Deploy to Azure App Service
+## 2. Deploy to Azure App Service
 To deploy the application to Microsoft Azure (https://azure.com) follow the below steps. The guide assumes you have signed up for Azure account, have an active subscription and basic Linux server administration skills.
 
 *Create App Service* 
@@ -168,7 +168,7 @@ Navidate to `site`
 
 
 ```bash
-    git clone https://github.com/pruvn/orapi .
+    git clone https://github.com/sarapis/fusio-orapi .
 ```
 
 Move contents of the api to `wwwroot`
