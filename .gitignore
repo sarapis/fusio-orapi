@@ -3,3 +3,4 @@ cache/
 vendor/
 _doc/
 import/
+.env

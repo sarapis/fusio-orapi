@@ -6,8 +6,8 @@ Mysql_HSDA:
   config:
     type: "pdo_mysql"
     host: "localhost"
-    username: ""
-    password: ""
+    username: "orapiUser2021"
+    password: "HsdlkjhGGE(*&780"
     database: "orapi_data"
 
 # HTTP

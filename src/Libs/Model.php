@@ -1012,7 +1012,7 @@ class Model
 
 	function getTaxonomy(array $params)
 	{
-		$items = $this->connection->fetchAll('SELECT * FROM taxonomy');
+		$items = $this->connection->fetchAll('SELECT * FROM taxonomy WHERE taxonomy_facet LIKE "Service Category"');
 		return [
 			'total_items' => count($items),
 			'items' => $items
@@ -1025,6 +1025,7 @@ class Model
 		$tName = addslashes(urldecode($tName));
 		if (!$query->strictSearch)
 			$tName = "%{$tName}%";
+
 		if (!$query->isValid)
 			return false;
 		
@@ -1045,8 +1046,8 @@ class Model
 						ON t.id = s.taxonomy_id
 					WHERE t.name LIKE '{$tName}'
 					GROUP BY s.service_id");
-		//echo $sql . '<br/>';
-		//var_dump($query);
+		#echo $sql . '<br/>';
+		#var_dump($query);
 		
 		if (!$idsIdxd)
 			return false;
@@ -1059,11 +1060,13 @@ class Model
 		$query->sql['where'] =
 				(string)$query->sql['where'] .
 				($query->sql['where'] ? ' AND' : 'WHERE') .
-				sprintf(' id IN (%s)', 
-					implode(',', $ids)
+				sprintf(' id IN ("%s")', 
+					implode('","', $ids)
 				);
 		
 		$count = $this->connection->fetchColumn("SELECT COUNT(*) FROM services {$query->sql['where']}");
+		
+		#print_r([$count, "SELECT COUNT(*) FROM services {$query->sql['where']}"]);
 		if (!$count)
 			return false;
 
@@ -1077,7 +1080,6 @@ class Model
 					{$query->sql['limit']}";
 					
 		$items = $count ? $this->connection->fetchAll($sql) : [];
-
 		return 
 			[
 				'page' => $query->parameters['page'],
