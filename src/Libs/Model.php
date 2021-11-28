@@ -609,15 +609,17 @@ class Model
 
 	function getServices(array $params)
 	{
-		if (preg_match('~organization:~si', ($params['query'] ?? '') . ($params['queries'] ?? '')))
+		if (preg_match('~organization:|namesearch:~si', ($params['query'] ?? '') . ($params['queries'] ?? '')))
 			return $this->getServicesByOrganization($params);
+		elseif (preg_match('~namesearch:~si', ($params['query'] ?? '') . ($params['queries'] ?? '')))
+			return $this->getServicesByNameSearch($params);			// service name=namesearch OR organization=namesearch
 		else
 			return $this->getItemsByQuery('services', $params);
 	}
 
 	function getServicesByOrganization(array $params)
 	{
-		$ff = array_merge(self::fieldSet('services'), ['organization']);
+		$ff = array_merge(self::fieldSet('services'), ['organization','namesearch']);
 		$query = new Query($params, $ff, $ff);
 		if (!$query->isValid)
 			return false;
@@ -630,6 +632,37 @@ class Model
 						s.*
 					FROM {$table}
 					{$query->sql['where']}
+					{$query->sql['sort_by']}
+					{$query->sql['limit']}";
+		#echo $sql;
+		$items = $count ? $this->connection->fetchAll($sql) : [];
+
+		return 
+			[
+				'page' => $query->parameters['page'],
+				'per_page' => $query->parameters['per_page'],
+				'total_pages' => $totalpages,
+				'total_items' => $count,
+				'items' => $items,
+			];
+	}
+
+	function getServicesByNameSearch(array $params)
+	{
+		$ff = array_merge(self::fieldSet('services'), ['namesearch']);
+		$query = new Query($params, $ff, $ff);
+		if (!$query->isValid)
+			return false;
+		
+		$table = 'services s INNER JOIN (SELECT id as org_id, name as organization FROM organizations) o ON s.organization_id=o.org_id';
+		$where = "WHERE (organization='{$params['namesearch']}' OR name='{$params['namesearch']}'";
+		$count   = $this->connection->fetchColumn("SELECT COUNT(*) FROM {$table} {$where}");
+		$totalpages = ceil($count / $query->parameters['per_page']);
+
+		$sql = "SELECT 
+						s.*
+					FROM {$table}
+					{$where}
 					{$query->sql['sort_by']}
 					{$query->sql['limit']}";
 		//echo $sql;			

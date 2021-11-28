@@ -81,7 +81,10 @@ class Query
 		$req = addslashes(urldecode($req));
 		if ($req && !$this->strictSearch) 
 			$req = "%{$req}%";
-		return $req !== '' ? "{$field} LIKE \"{$req}\"" : "{$field} LIKE \"\"";
+		if ($req !== '')
+			return $field == 'namesearch' ? "(name LIKE \"{$req}\" OR organization LIKE \"{$req}\")" : "{$field} LIKE \"{$req}\"";
+		else
+			return $field == 'namesearch' ? "(name LIKE \"\" OR organization LIKE \"\")" : "{$field} LIKE \"\"";
 	}
 	
 // ==== tweaks ========================================================================================	
