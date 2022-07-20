@@ -39,6 +39,7 @@
 
 "/services": !include resources/routes/services/services.yaml
 "/services/complete": !include resources/routes/services/services_complete.yaml
+"/services/completeext": !include resources/routes/services/services_complete_ext.yaml
 "/services/:id/contacts": !include resources/routes/services/service_contacts.yaml
 "/services/:id/contacts/:item_id": !include resources/routes/services/service_contact.yaml
 "/services/:id/languages": !include resources/routes/services/service_languages.yaml
@@ -56,6 +57,7 @@
 "/services/:id/organization": !include resources/routes/services/service_organization.yaml
 "/services/:id/location": !include resources/routes/services/service_location.yaml
 "/services/complete/*id": !include resources/routes/services/service_complete.yaml
+"/services/completeext/*id": !include resources/routes/services/service_complete_ext.yaml
 "/services/*id": !include resources/routes/services/service.yaml
 
 

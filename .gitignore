@@ -4,3 +4,4 @@ vendor/
 _doc/
 import/
 .env
+.env_aws

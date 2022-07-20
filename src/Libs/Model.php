@@ -409,17 +409,24 @@ class Model
 		return $locations;
 	}
 
-	function getLocationCompleteDetails($ids)
+	function getLocationCompleteDetails($ids, $short = false)
 	{
 		$result = [];
-		foreach ([
-			'getLocationsRegSchedules' => 'regular_schedule',
-			'getLocationsLanguages' => 'languages',
-			'getLocationsPhysAddresses' => 'physical_address',
-			'getLocationsPhones' => 'phones',
-			'getLocationsServices' => 'service',
-			'getLocationsAccessibility' => 'accessibility_for_disabilities',
-		] as $method=>$key)
+		$trg = $short 
+			? [
+				'getLocationsRegSchedules' => 'regular_schedule',
+				'getLocationsPhysAddresses' => 'physical_address',
+				'getLocationsPhones' => 'phones',
+			]
+			: [
+				'getLocationsRegSchedules' => 'regular_schedule',
+				'getLocationsLanguages' => 'languages',
+				'getLocationsPhysAddresses' => 'physical_address',
+				'getLocationsPhones' => 'phones',
+				'getLocationsServices' => 'service',
+				'getLocationsAccessibility' => 'accessibility_for_disabilities',
+			];
+		foreach ($trg as $method=>$key)
 		{
 			$items = $this->$method($ids);
 			foreach ($items as $item)
@@ -929,16 +936,16 @@ class Model
 
 	//---- complete ---------------	
 	
-	function getServiceComplete(string $id)
+	function getServiceComplete(string $id, bool $extLocations = false)
 	{
 		$item = $this->getService($id);
 		if (!$item)
 			return false;
-		$details = $this->getServiceCompleteDetails($id);
+		$details = $this->getServiceCompleteDetails($id, $extLocations);
 		return array_merge($item, $details[$id]);
 	}
 
-	function getServicesComplete(array $params)
+	function getServicesComplete(array $params, bool $extLocations = false)
 	{
 		$services = $this->getServices($params);
 		$items = $services['items'];
@@ -947,16 +954,17 @@ class Model
 		$ids = [];
 		foreach ($items as $item)
 			$ids[] = $item['id'];
-		$details = $this->getServiceCompleteDetails($ids);
+		$details = $this->getServiceCompleteDetails($ids, $extLocations);
 		foreach ($items as $i=>$item)
 			$items[$i] = array_merge($item, $details[$item['id']]);
 		$services['items'] = $items;
 		return $services;
 	}
 
-	function getServiceCompleteDetails($ids)
+	function getServiceCompleteDetails($ids, bool $extLocations = false)
 	{
 		$result = [];
+		$lIds = [];
 		foreach ([
 			'getServicesContacts' => 'contacts',
 			'getServicesRegSchedules' => 'regular_schedule',
@@ -971,8 +979,24 @@ class Model
 		{
 			$items = $this->$method($ids);
 			foreach ($items as $item)
-				$result[$item['service_id']][$key][] = array_diff_key($item, ['service_id' => 1]);
+			{
+				$result[$item['service_id']][$key][] = array_diff_key($item, ['service_id' => 1]);				
+				if ($key == 'location')
+					$lIds[] = $item['id'];
+			}
 		}
+		
+		if ($extLocations)
+		{
+			$ll = $this->getLocationCompleteDetails($lIds, true);
+			
+			//print_r($ll);
+			
+			foreach ($result as $id=>$srv)
+				foreach ($srv['location'] ?? [] as $i=>$loc)
+					$result[$id]['location'][$i] = array_merge($loc, $ll[$loc['id']] ?? ['regular_schedule' => [], 'physical_address' => [], 'phones' => []]);
+		}
+		
 		return $result;
 	}
 
@@ -1123,7 +1147,7 @@ class Model
 			];
 	}
 
-	function getServicesCompleteByTaxonomy(string $tName, array $params)
+	function getServicesCompleteByTaxonomy(string $tName, array $params, bool $extLocations = false)
 	{
 		$services = $this->getServicesByTaxonomy($tName, $params);
 		$items = $services['items'];
@@ -1132,7 +1156,7 @@ class Model
 		$ids = [];
 		foreach ($items as $item)
 			$ids[] = $item['id'];
-		$details = $this->getServiceCompleteDetails($ids);
+		$details = $this->getServiceCompleteDetails($ids, $extLocations);
 		foreach ($items as $i=>$item)
 			$items[$i] = array_merge($item, $details[$item['id']]);
 		$services['items'] = $items;
