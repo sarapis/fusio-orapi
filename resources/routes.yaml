@@ -67,3 +67,5 @@
 "/taxonomys/:id": !include resources/routes/taxonomy/taxonomy_item.yaml
 
 "/autocomplete/:section": !include resources/routes/srv/autocomplete.yaml
+"/stats": !include resources/routes/srv/stats.yaml
+
